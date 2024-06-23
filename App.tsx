@@ -113,46 +113,29 @@
 // });
 
 // export default App;
-import React, { Component } from "react";
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  TouchableHighlight,
-} from "react-native";
-import { Stopwatch, Timer } from "react-native-stopwatch-timer";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./HomeScreen";
 import StopWatchScreen from "./StopWatchScreen";
-// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import AnalyticsScreen from "./AnalyticsScreen";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
-const Stack = createNativeStackNavigator();
 const Tab = createMaterialTopTabNavigator();
 
 function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
+        initialRouteName="StopWatch"
         screenOptions={{
-          tabBarStyle: { display: "none" },
-          // headerTitleStyle: { display: "none" },
+          // tabBarStyle: { display: "none" },
           swipeEnabled: true,
         }}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={StopWatchScreen} />
+        <Tab.Screen name="StopWatch" component={StopWatchScreen} />
+        <Tab.Screen name="Analytics" component={AnalyticsScreen} />
       </Tab.Navigator>
-      {/* <Stack.Navigator initialRouteName="StopWatch">
-        <Stack.Screen name="Home" component={HomeScreen}></Stack.Screen>
-        <Stack.Screen
-          name="StopWatch"
-          options={{ title: "time tracker" }}
-          component={StopWatchScreen}
-        />
-      </Stack.Navigator> */}
     </NavigationContainer>
   );
 }
