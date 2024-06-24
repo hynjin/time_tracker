@@ -115,8 +115,8 @@
 // export default App;
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import HomeScreen from "./HomeScreen";
-import StopWatchScreen from "./StopWatchScreen";
+import BlocksScreen from "./components/BlocksScreen";
+import StopWatchScreen from "./components/StopWatchScreen";
 import AnalyticsScreen from "./AnalyticsScreen";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
@@ -132,7 +132,7 @@ function App() {
           swipeEnabled: true,
         }}
       >
-        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Blocks" component={BlocksScreen} />
         <Tab.Screen name="StopWatch" component={StopWatchScreen} />
         <Tab.Screen name="Analytics" component={AnalyticsScreen} />
       </Tab.Navigator>
